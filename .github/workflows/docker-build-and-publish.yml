@@ -120,8 +120,8 @@ jobs:
             IMAGE_SOURCE=ghcr.io/${{ github.repository }}
             BASE_IMAGE=${{ inputs.base_image }}
             BASE_APP_IMAGE=${{ inputs.base_app_image }}
-          cache-from: type=registry,ref=${{ inputs.image_name }}:buildcache
-          cache-to: type=registry,ref=${{ inputs.image_name }}:buildcache,mode=max
+          cache-from: type=registry,ref=ghcr.io/${{ github.repository }}/${{ inputs.image_name }}:buildcache
+          cache-to: type=registry,ref=ghcr.io/${{ github.repository }}/${{ inputs.image_name }}:buildcache,mode=max
 
       - name: Image digest
         run: echo "${{ inputs.image_name }} > ${{ steps.docker_build.outputs.digest }}"
