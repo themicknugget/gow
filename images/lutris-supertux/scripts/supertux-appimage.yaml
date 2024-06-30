@@ -1,0 +1,28 @@
+description: ''
+game_slug: supertux
+gogslug: ''
+humblestoreid: ''
+installer_slug: supertux-appimage
+name: SuperTux
+notes: 'Arch-based systems might need to install the following dependencies: "physfs
+  glew1.10 libcurl-gnutls"'
+runner: linux
+script:
+  files:
+  - appimg: https://github.com/SuperTux/supertux/releases/download/v0.6.3/SuperTux-v0.6.3.glibc2.29-x86_64.AppImage
+  game:
+    exe: SuperTux-v0.6.3.glibc2.29-x86_64.AppImage
+    args: --fullscreen
+  installer:
+  - chmodx: appimg
+  - move:
+      dst: $GAMEDIR
+      src: appimg
+  system:
+    env:
+      APPIMAGELAUNCHER_DISABLE: true
+      APPIMAGE_EXTRACT_AND_RUN: true
+slug: supertux-appimage
+steamid: null
+version: AppImage
+year: 2003
