@@ -13,4 +13,6 @@ done
 gow_log "[start] Starting Plasma Desktop"
 
 source /opt/gow/launch-comp.sh
+export XDG_SESSION_TYPE=wayland
+
 launcher "/usr/bin/startplasma-x11" "${LUTRIS_ARGS[@]}"
