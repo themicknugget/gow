@@ -14,5 +14,7 @@ gow_log "[start] Starting Plasma Desktop"
 
 source /opt/gow/launch-comp.sh
 export XDG_SESSION_TYPE=wayland
+export XDG_SESSION_ID="${DISPLAY#*:}"
 
-launcher "/usr/bin/startplasma-x11" "${LUTRIS_ARGS[@]}"
+/usr/bin/startplasma-x11 
+# launcher "/usr/bin/startplasma-x11" "${LUTRIS_ARGS[@]}"
